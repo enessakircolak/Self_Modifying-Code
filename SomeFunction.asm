@@ -12,28 +12,28 @@ SomeFunction proc
 	mov dword ptr func[+4h],90c39090h
 
 MyFunc:
-	add eax, 5	  ; sub eax,5
+	add eax, 5	  	  ; sub eax,5
 	nop			  ;nop
-	nop				;inc eax
-	add eax,5		;nop nop
-	add eax,5		;add eax,5
-	mov dword ptr func2,9090c031h
+	nop 			  ;inc eax
+	add eax,5		  ;nop nop
+	add eax,5		  ;add eax,5
+	mov dword ptr func2,9090c031h 
 	jmp oyuk
 func2:
-	add eax,10   ;xor eax 
+	add eax,10   ;xor eax - nop - nop ; sub eax,5 -nop
 	nop
 func:
-    mov eax, 10  ;sub eax 5  ; inc eax
+    mov eax, 10  	;sub eax 5  ; inc eax
 	nop			
-    add eax, 5  ; ret
+    add eax, 5  	; ret
     ret
 	ret
 oyuk:
 	dec eax 
 	dec eax
-	mov dword ptr func , 9090c0ffh
-	mov dword ptr func2[+4h] ,9005e883h
-	;mov dword ptr func2[+950h] ,9005e883h
+	mov dword ptr func , 9090c0ffh  	; inc eax   - nop - nop
+	mov dword ptr func2[+4h] ,9005e883h     ; sub eax,5 - nop
+	;mov dword ptr func2[+950h] ,9005e883h  
 	add eax,5
 	sub eax,5
 	jmp func2
