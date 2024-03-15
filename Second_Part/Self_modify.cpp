@@ -53,8 +53,8 @@ int second_func() {
 
 
      // end of the junk code implementation
-    spiynxx asd; // junk code implementation
-
+    spiynxx asd; // junk code implementation but this one is just {e8 (address)} (call 0xXXXXXXXX) so add just 5 byte
+    
     // https://junkcode.gehaxelt.in/
 
     int a = 0;
