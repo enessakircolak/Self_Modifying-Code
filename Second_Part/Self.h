@@ -2,26 +2,17 @@
 #include <Windows.h>
 #include <assert.h>
 #include <iostream>
-
-
 #include <stdio.h>
 #include <string>
 
-
-
 using namespace std;
 
-
-
 int self_func(int* source_addr, int* dest_addr) {
-
 
 	BYTE* init_func_address = (BYTE*)(void*)source_addr;
 	BYTE* second_func_address = (BYTE*)(void*)dest_addr;
  
-
     for (int i = 0; i < 0x100; i++) {
-
 
         second_func_address[i] = init_func_address[i];//use only far call at init_func, local functions offset calculation is confusing at replacing
         // burada fonksiyonun içini alýp direkt diðerine kopyalýyor 
@@ -33,8 +24,6 @@ int self_func(int* source_addr, int* dest_addr) {
    
     }
 label2:
-
-
 
     return 0;
 }
@@ -68,11 +57,8 @@ void get_write_perm() {
         address = (BYTE*)info.BaseAddress + info.RegionSize;
         x++;
     }
-
-
-
-
 }
+
 
 void junk2() {
     bool JunkCode8200 = true;

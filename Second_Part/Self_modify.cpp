@@ -7,23 +7,16 @@ using namespace std;
 
 #pragma warning(disable : 4996)
 
-
 int init_func(int size);
 int second_func();
 
 
-
-
-int main()
-{
+int main(){
 
     get_write_perm();
     self_func((int*)init_func, (int*)second_func);
 
-
     std::cout << "Func value: " << second_func() << std::endl;
-
-
     return 0;
 }
 
@@ -31,18 +24,14 @@ int main()
 
 int second_func() {
 
-
     std::string b = "ifyoucan";
     MessageBoxA(0, b.c_str(), "catchme", NULL);
     char buffer[MAX_PATH];
     DWORD length = GetTempPathA(MAX_PATH, buffer);
     MessageBoxA(0, buffer, "ifyoucan", NULL);
 
-
-
     // you need to close optimization settings to use this junk codes
     // Junk code reason ->  need to more size than which is written to this function
-
 
     int junk1 = { 5 };
     junk1 = junk1 + 26;
@@ -51,15 +40,12 @@ int second_func() {
     junk1 = junk1 * 3;
     // junk1 = junk1 - (int)init_func();
 
-
      // end of the junk code implementation
     spiynxx asd; // junk code implementation but this one is just {e8 (address)} (call 0xXXXXXXXX) so add just 5 byte
     
     // https://junkcode.gehaxelt.in/
 
     int a = 0;
-
-
 
     bool JunkCode8200 = true;
     if (JunkCode8200 == true)
@@ -108,8 +94,6 @@ int second_func() {
 
 int init_func(int size) {
 
-
-
     //char buffer[MAX_PATH];
     //DWORD length = GetTempPathA(MAX_PATH, buffer);
     //MessageBoxA(0, buffer, "IGotYou", NULL);
@@ -117,7 +101,5 @@ int init_func(int size) {
     MessageBoxA(0, "iGotYou", "catchme", NULL);
 
     int a = 6;
-
-
     return a;
 };
